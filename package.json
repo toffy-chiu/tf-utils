@@ -1,0 +1,24 @@
+{
+  "name": "tf-utils",
+  "version": "1.1.0",
+  "description": "provide for some utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://toffy-chiu@github.com/toffy-chiu/utils.git"
+  },
+  "keywords": [
+    "utils",
+    "dom",
+    "tool"
+  ],
+  "author": "toffy chiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toffy-chiu/utils/issues"
+  },
+  "homepage": "https://github.com/toffy-chiu/utils#readme"
+}
