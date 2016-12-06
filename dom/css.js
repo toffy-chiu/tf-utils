@@ -1,17 +1,17 @@
-function css(element, name, value){
-    if(typeof name === 'string'){
-        if(value===undefined){
+function css(element, name, value) {
+    if (typeof name === 'string') {
+        if (value === undefined) {
             //get css
             return element.style[name];
-        }else{
+        } else {
             //set css
-            element.style[name]=value;
+            element.style[name] = value;
         }
-    }else if(Object.prototype.toString.call(name) === "[object Object]"){
-        var obj=name;
+    } else if (Object.prototype.toString.call(name) === "[object Object]") {
+        var obj = name;
         //set css
-        for(var key in obj){
-            element.style[key]=obj[key];
+        for (var key in obj) {
+            element.style[key] = obj[key];
         }
     }
 }

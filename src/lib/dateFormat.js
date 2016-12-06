@@ -1,10 +1,11 @@
 function fix(t) {
-    if (t < 10) t = '0' + t;
+    if (t < 10)
+        t = '0' + t;
     return t;
 }
 
-function dateFormat(date, pattern) {
-    var x = date;
+function dateFormat(date, pattern){
+    var x=date;
     var y = x.getFullYear(),
         M = fix(x.getMonth() + 1),
         d = fix(x.getDate()),

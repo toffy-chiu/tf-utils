@@ -1,18 +1,18 @@
-var hasClass=require('./hasClass');
+var hasClass = require('./hasClass');
 
-function addClass(element, className){
-    if(!className){
+function addClass(element, className) {
+    if (!className) {
         throw new Error('参数"className"不能为空！');
     }
-    var classNames=[];
+    var classNames = [];
 
     //原来的class
-    if(element.className){
-        classNames=classNames.concat(element.className.split(' '));
+    if (element.className) {
+        classNames = classNames.concat(element.className.split(' '));
     }
 
     //没有才添加
-    if(!hasClass(element, className)) {
+    if (!hasClass(element, className)) {
         //新增的class
         classNames.push(className);
 
@@ -21,4 +21,4 @@ function addClass(element, className){
     }
 }
 
-module.exports=addClass;
+module.exports = addClass;

@@ -4,23 +4,23 @@
  * @param element
  * @returns {{left: (Number|number), top: (*|number|Number), width: number, height: number}}
  */
-function offset(element) {
-    var obj = {
-        left: element.offsetLeft,
-        top: element.offsetTop,
-        width: element.offsetWidth,
-        height: element.offsetHeight
+function offset(element){
+    var obj={
+        left:element.offsetLeft,
+        top:element.offsetTop,
+        width:element.offsetWidth,
+        height:element.offsetHeight
     };
 
     /**
      * 逐层寻找offsetParent，直到根节点为止
      * @param parent
      */
-    function findRootParent(parent) {
-        var callee = arguments.callee;
-        if (parent !== document.body) {
-            obj.left += parent.offsetLeft;
-            obj.top += parent.offsetTop;
+    function findRootParent(parent){
+        var callee=arguments.callee;
+        if(parent!==document.body){
+            obj.left+=parent.offsetLeft;
+            obj.top+=parent.offsetTop;
             callee(parent.offsetParent);
         }
     }
@@ -30,4 +30,4 @@ function offset(element) {
     return obj;
 }
 
-module.exports = offset;
+module.exports=offset;

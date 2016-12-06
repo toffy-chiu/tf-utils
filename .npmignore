@@ -1,0 +1,8 @@
+.travis.yml
+.gitignore
+.npmignore
+.babelrc
+/.idea
+/node_modules/
+/src
+/test

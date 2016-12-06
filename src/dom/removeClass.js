@@ -1,18 +1,18 @@
-var hasClass = require('./hasClass');
+var hasClass=require('./hasClass');
 
-function removeClass(element, className) {
-    if (!className) {
+function removeClass(element, className){
+    if(!className){
         throw new Error('参数"className"不能为空！');
     }
-    var classNames = [];
+    var classNames=[];
 
     //原来的class
-    if (element.className) {
-        classNames = classNames.concat(element.className.split(/\s+/));
+    if(element.className){
+        classNames=classNames.concat(element.className.split(/\s+/));
     }
 
     //判断指定class是否存在于元素中
-    if (hasClass(element, className)) {
+    if(hasClass(element, className)) {
         //移除指定class
         classNames.splice(classNames.indexOf(className), 1);
 
@@ -21,4 +21,4 @@ function removeClass(element, className) {
     }
 }
 
-module.exports = removeClass;
+module.exports=removeClass;

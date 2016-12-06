@@ -1,10 +1,13 @@
 {
   "name": "tf-utils",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "provide for some utilities",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf lib class dom form",
+    "build": "babel src --out-dir ./ --extensions .js --copy-files",
+    "prepublish": "npm run clean && npm run build",
+    "test": "node ./test/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,15 @@
   ],
   "author": "toffy chiu",
   "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "html-webpack-plugin": "^2.24.1",
+    "react-hot-loader": "^3.0.0-beta.5",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
   "bugs": {
     "url": "https://github.com/toffy-chiu/utils/issues"
   },
