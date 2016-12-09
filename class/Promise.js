@@ -9,17 +9,27 @@ function Promise() {
 
 Promise.prototype = {
     construct: Promise,
-    complete: function (type, result) {
+    complete: function () {
+        var args = Array.prototype.slice.call(arguments);
+        var type = args[0];
         while (this.callbacks[0]) {
             var callback = this.callbacks.shift();
-            callback[type] && callback[type](result);
+            if (callback[type]) {
+                callback[type].apply(callback, args.slice(1));
+            }
         }
     },
-    resolve: function (result) {
-        this.complete('resolve', result);
+    resolve: function () {
+        //支持动态参数
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift('resolve');
+        this.complete.apply(this, args);
     },
     reject: function (result) {
-        this.complete('reject', result);
+        //支持动态参数
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift('reject');
+        this.complete.apply(this, args);
     },
     then: function (successHandler, failedHandler) {
         this.callbacks.push({
