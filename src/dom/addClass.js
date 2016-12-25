@@ -7,8 +7,8 @@ function addClass(element, className){
     var classNames=[];
 
     //原来的class
-    if(element.className){
-        classNames=classNames.concat(element.className.split(' '));
+    if(element.getAttribute('class')){
+        classNames=element.getAttribute('class').split(/\s+/);
     }
 
     //没有才添加
@@ -17,8 +17,8 @@ function addClass(element, className){
         classNames.push(className);
 
         //更新
-        element.className = classNames.join(' ');
+        element.setAttribute('class', classNames.join(' '));
     }
 }
 
-module.exports=addClass;
+module.exports = addClass;

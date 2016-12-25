@@ -9,11 +9,11 @@ function hasClass(element, className){
         throw new Error('参数"className"不能为空！');
     }
     var result=false;
-    if(element.className){
-        var classList=element.className.split(/\s+/);
+    if(element.getAttribute('class')){
+        var classList=element.getAttribute('class').split(/\s+/);
         result=~classList.indexOf(className);
     }
     return result;
 }
 
-module.exports=hasClass;
+module.exports = hasClass;

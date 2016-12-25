@@ -12,6 +12,7 @@ function ajax(option){
         data:'',
         dataType:'json',
         jsonp:'cb',
+        processData:true,
         contentType:'application/x-www-form-urlencoded',
         success:function(){},
         error:function(){}
@@ -34,7 +35,7 @@ function ajax(option){
     };
 
     //序列化参数
-    if(typeof opt.data!=='string'){
+    if(opt.processData&&typeof opt.data!=='string'){
         opt.data=param(opt.data);
     }
 

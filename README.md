@@ -3,6 +3,9 @@
 
 ## 日志更新
 
+### v1.2.2
+- 优化操作class相关的dom方法，使用attr来替换className操作。
+
 ### v1.2.1
 - 优化objectAssign替换逻辑。
 - 优化Promise，支持动态参数。
