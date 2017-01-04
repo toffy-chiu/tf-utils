@@ -18,7 +18,7 @@ function offset(element){
      */
     function findRootParent(parent){
         var callee=arguments.callee;
-        if(parent!==document.body){
+        if(parent&&parent!==document.body){
             obj.left+=parent.offsetLeft;
             obj.top+=parent.offsetTop;
             callee(parent.offsetParent);
