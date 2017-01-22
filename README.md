@@ -3,6 +3,9 @@
 
 ## 日志更新
 
+### v1.3.0
+- 增加dom操作hasParent。
+
 ### v1.2.2
 - 优化操作class相关的dom方法，使用attr来替换className操作。
 
