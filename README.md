@@ -3,6 +3,9 @@
 
 ## 日志更新
 
+### v1.4.0
+- 增加dom操作toggleClass。
+
 ### v1.3.0
 - 增加dom操作hasParent。
 
